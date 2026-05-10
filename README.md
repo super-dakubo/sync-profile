@@ -12,6 +12,8 @@
 | `/sync-profile pull` | 回收项目经验：将新踩坑记录归入种子包 |
 | `/sync-profile refresh` | 同步种子包更新：增量覆盖模板，保留自定义内容 |
 
+> 完整使用说明见 [docs/sync-profile-intro.html](docs/sync-profile-intro.html)。
+
 ## 目录结构
 
 ```

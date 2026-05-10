@@ -2,7 +2,7 @@
 
 > 把你的个人侧写、AI 协作规则、踩坑记录打包成可跨环境复制的种子包。
 >
-> 推荐先看使用说明（浏览器打开）：`docs/superpowers/specs/sync-profile-intro.html`（如存在）
+> 推荐先看使用说明（浏览器打开）：`docs/sync-profile-intro.html`（如存在）
 
 ## 目录结构
 
