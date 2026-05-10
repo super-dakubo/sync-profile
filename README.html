@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sync-profile 说明</title>
+<style>
+:root { --bg: #1a1e2e; --surface: rgba(255,255,255,0.04); --text: rgba(255,255,255,0.85); --text-dim: rgba(255,255,255,0.35); --border: rgba(255,255,255,0.08); --blue: #4b8bf4; --green: #34d399; --yellow: #fbbf24; }
+body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; max-width: 680px; margin: 0 auto; padding: 28px 20px; font-size: 15px; line-height: 1.7; }
+h1 { font-size: 1.3rem; margin-bottom: 4px; }
+.sub { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 20px; }
+hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+code { background: rgba(255,255,255,0.08); padding: 1px 6px; border-radius: 4px; font-size: 0.82rem; }
+.tag { display: inline-block; font-size: 0.6rem; padding: 1px 8px; border-radius: 5px; font-weight: 600; background: rgba(75,139,244,0.15); color: var(--blue); }
+.box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; }
+.box .lbl { font-size: 0.7rem; color: var(--text-dim); }
+.cmd { background: rgba(75,139,244,0.15); color: var(--blue); font-family: monospace; padding: 1px 10px; border-radius: 6px; font-weight: 600; }
+.tree { background: rgba(0,0,0,0.25); border-radius: 6px; padding: 12px 16px; font-family: monospace; font-size: 0.73rem; line-height: 1.6; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>sync-profile</h1>
+<div class="sub">把你的开发经验装进口袋，带到任意项目</div>
+
+<div class="box">
+<div class="lbl">这是做什么的？</div>
+一个 Skill，把你的编码习惯、AI 协作规则、踩坑记录打包成可跨环境复制的种子包。<br>
+初始化新项目时，AI 自动认识你。
+</div>
+
+<hr>
+
+<h2>四个操作</h2>
+
+<div class="box">
+<strong><span class="cmd">/sync-profile init</span></strong><br>
+<span style="font-size:0.85rem;color:var(--text-dim);">新项目初始化。</span><br>
+问语言和版本 → 生成项目 CLAUDE.md + LESSONS.md + 权限配置。<br>
+只复制匹配语言和版本的踩坑记录，不相关的跳过。
+</div>
+
+<div class="box">
+<strong><span class="cmd">/sync-profile pull</span></strong><br>
+<span style="font-size:0.85rem;color:var(--text-dim);">回收项目里新踩的坑回种子包。</span><br>
+AI 逐条判断归类，确认的自动整理、不确定的问你。<br>
+这样下次 init 其他项目时也有这些教训。
+</div>
+
+<div class="box">
+<strong><span class="cmd">/sync-profile refresh</span></strong><br>
+<span style="font-size:0.85rem;color:var(--text-dim);">种子包更新了，同步到已有项目。</span><br>
+保留你项目里手写的内容，只覆盖模板部分。
+</div>
+
+<div class="box">
+<strong><span class="cmd">/sync-profile merge</span></strong><br>
+<span style="font-size:0.85rem;color:var(--text-dim);">家里和公司的种子包各自改了，合并。</span><br>
+比对两边文件的 MD5 → 找出差异 → 逐文件展示让你选保留哪边。
+</div>
+
+<hr>
+
+<h2>目录结构</h2>
+<div class="tree">
+sync-profile/<br>
+├── README.html        ← 本文件<br>
+├── SKILL.md           ← AI 读的指令<br>
+├── seed.yaml          ← 版本号 + changelog<br>
+├── profile/           ← 你的个人侧写<br>
+├── config/            ← 全局配置模板<br>
+├── knowledge/         ← 踩坑记录（按语言版本分层）<br>
+├── scaffolds/         ← 项目骨架模板<br>
+└── scripts/           ← PowerShell 辅助脚本
+</div>
+
+<hr>
+
+<h2>怎么用</h2>
+
+<div class="box">
+<strong>家里维护种子包</strong><br>
+直接编辑 <code>profile/</code>、<code>knowledge/</code> 里的文件。<br>
+改完跑 <code>/sync-profile refresh</code> 同步到已有项目。
+</div>
+
+<div class="box">
+<strong>复制到公司</strong><br>
+把整个 <code>sync-profile/</code> 目录丢进 U 盘。<br>
+到公司复制到 <code>~/.claude/skills/</code> 即可使用。<br>
+<em style="color:var(--text-dim);">无需 git，无需联网，纯文件。</em>
+</div>
+
+<div class="box">
+<strong>经验带回家</strong><br>
+公司项目跑 <code>/sync-profile pull</code> → 新教训写入公司种子包。<br>
+U 盘带回家 → 跑 <code>/sync-profile merge</code> 合并到家里种子包。
+</div>
+
+<hr>
+
+<p style="text-align:center;font-size:0.75rem;color:var(--text-dim);">
+内网可用 · 纯文件 · 工具无关 · 零依赖
+</p>
+
+</body>
+</html>

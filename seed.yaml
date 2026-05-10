@@ -3,6 +3,13 @@ version: 1
 created: 2026-05-10
 updated: 2026-05-10
 changelog:
+  - version: 2
+    what: "新增 merge 操作 + README.html"
+    files:
+      - "SKILL.md"
+      - "seed.yaml"
+      - "scripts/compute-hash.ps1"
+      - "README.html"
   - version: 1
     what: "初始版本"
     files:
@@ -17,3 +24,22 @@ changelog:
       - "scaffolds/rust-tauri/*"
       - "scaffolds/generic/*"
       - "scripts/*"
+
+files:
+  SKILL.md: 193d18d63bfad155f4cfd487302a1f10
+  profile/personal.md: f55d83cdf90005e239f584e148850a95
+  profile/coding.md: eb9a9bd37dfb6e13221bf44c472d6ca0
+  profile/workflow.md: 6a64b39195d4ac6f8b76e62f4b3299ca
+  config/global-settings.json: 6bd1d9a525b3cbf40e3fa777d25e547a
+  config/permissions.md: a54fc4c1b04eff8790a9608352269aff
+  knowledge/common/debugging.md: 9d00cfc8db58a199db6d1ab540b42eba
+  knowledge/rust/tauri-pitfalls.md: 9d365a8df3f1467c8dcb5d978e102c24
+  scaffolds/generic/CLAUDE.md.hbs: 852706b97ff78faeda5f47e6bd99014e
+  scaffolds/rust-tauri/CLAUDE.md.hbs: 4de78f8caa0fb0ed38e7a76f839cd2bf
+  scaffolds/rust-tauri/LESSONS.md.hbs: a72f96f4fd6dc77a91aaaff44e04c77e
+  scaffolds/rust-tauri/settings.local.json.hbs: 23361bd1e5dd4e140df5b5e85c864253
+  scripts/merge-settings.ps1: c49be62d81da3f76b33c11c3b13d91b5
+  scripts/generate-scaffold.ps1: 8d495f123faa6088e3d5d2e1483bc640
+  scripts/compute-hash.ps1: e7af340b4cc96993b1384e9af8101d1f
+  README.html: 2fb068923ac74e99d654fd6bb534af7f
+  seed.yaml: SKIP_SELF_HASH
